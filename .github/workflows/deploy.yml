@@ -1,0 +1,32 @@
+yamlname: Deploy to BlueHosting
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ftp.cartasuelta.cl
+          username: deploy@cartasuelta.cl
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: /pokemon/
+          security: loose
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.next/cache/**
