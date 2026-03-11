@@ -1,0 +1,31 @@
+{
+  "name": "pokemon",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "migrate-admins": "node scripts/migrate-admins.js",
+    "migrate-to-dynamodb": "node scripts/migrate-to-dynamodb.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    
+    "mercadopago": "^2.12.0",
+    "mysql2": "^3.19.1",
+    "next": "15.2.2",
+    "nodemailer": "^8.0.1",
+    
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "transbank-sdk": "^6.1.1",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
