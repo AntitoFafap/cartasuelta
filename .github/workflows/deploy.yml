@@ -1,4 +1,4 @@
-yamlname: Deploy to BlueHosting
+name: Deploy to BlueHosting
 
 on:
   push:
